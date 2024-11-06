@@ -1,0 +1,20 @@
+<button onclick="apiCall()">ApiCall</button>
+<p id="api"></p>
+<script>
+const apiurl="https://api.trace.moe/search?cutBorders&url=https://images.plurk.com/32B15UXxymfSMwKGTObY5e.jpg";
+const api=document.getElementById("api")
+async function apiCall()
+{
+const response=await fetch(apiurl);
+const data=await response.json();
+console.log(data)
+/*const mapping=new map(apiurl)
+const values=(map)=>{
+    const procced={}
+    map.forEach((value,key)=>{
+        procced[key]=value;
+    })
+}*/
+api.textContent=JSON.stringify(data)
+}
+</script>
